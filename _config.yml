@@ -1,0 +1,30 @@
+title: Koh Jin Hong, Lucas - Engineering Portfolio
+author: Koh Jin Hong, Lucas
+email: jinhongkh@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Highly motivated Electronic Engineering Master's candidate showcasing projects
+  in networking (TCP/IP, 5G, IAB), firmware testing automation (Docker, Jenkins),
+  and backend development (Node.js, AWS, MongoDB).
+baseurl: "" # the subpath of your site, e.g. /blog. If hosted at username.github.io, this is ""
+url: "https://lucasjinhong.github.io" # your site's base hostname & protocol (replace with your actual URL)
+github_username: lucasjinhong
+linkedin_url: https://linkedin.com/in/lucasjinhong
+
+# Choose a Jekyll theme (e.g., one of GitHub's defaults or a custom one)
+# theme: jekyll-theme-minimal
+# theme: jekyll-theme-cayman
+# theme: minima
+# For more advanced themes like Minimal Mistakes, you'd add it as a remote theme or gem.
+
+# For navigating to project pages easily (optional, depends on theme)
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
