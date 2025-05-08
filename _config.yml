@@ -1,30 +1,52 @@
 title: Koh Jin Hong, Lucas - Engineering Portfolio
-author: Koh Jin Hong, Lucas
-email: jinhongkh@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Highly motivated Electronic Engineering Master's candidate showcasing projects
-  in networking (TCP/IP, 5G, IAB), firmware testing automation (Docker, Jenkins),
-  and backend development (Node.js, AWS, MongoDB).
-baseurl: "" # the subpath of your site, e.g. /blog. If hosted at username.github.io, this is ""
-url: "https://lucasjinhong.github.io" # your site's base hostname & protocol (replace with your actual URL)
-github_username: lucasjinhong
-linkedin_url: https://linkedin.com/in/lucasjinhong
+author:
+  name: Koh Jin Hong, Lucas
+  email: jinhongkh@gmail.com # Replace with your actual email
+description: >-
+  Portfolio of Koh Jin Hong, Lucas, an Electronic Engineering Master's candidate.
+  Showcasing projects in networking, firmware automation, and backend development.
+baseurl: "" # For username.github.io
+url: "https://lucasjinhong.github.io" # Replace 'lucasjinhong' with your GitHub username
 
-# Choose a Jekyll theme (e.g., one of GitHub's defaults or a custom one)
-# theme: jekyll-theme-minimal
-# theme: jekyll-theme-cayman
-theme: minima
-# For more advanced themes like Minimal Mistakes, you'd add it as a remote theme or gem.
+# Minima theme specific settings
+minima:
+  date_format: "%b %-d, %Y"
+  social_links:
+    github: lucasjinhong  # Replace with your GitHub username
+    linkedin: lucasjinhong # Replace with your LinkedIn username (the part after linkedin.com/in/)
+    # To add email to social links (optional)
+    # - { platform: email, user_url: "mailto:jinhongkh@gmail.com" }
 
-# For navigating to project pages easily (optional, depends on theme)
+
+# Header pages (navigation links)
+header_pages:
+  - about.md
+  - projects.md
+  - assets/resume_koh_jin_hong_lucas.pdf # Direct link to resume in navigation
+
+# Build settings
+theme: minima # If GitHub Pages doesn't automatically pick it up, or for local build
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections for projects
 collections:
   projects:
     output: true
     permalink: /projects/:path/
 
-# Markdown settings
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    disable: true
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE.md

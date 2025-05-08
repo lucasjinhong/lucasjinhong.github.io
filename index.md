@@ -1,17 +1,19 @@
 ---
-layout: default # Assumes you have a _layouts/default.html
-title: Home
+layout: page
+title: Koh Jin Hong, Lucas
+permalink: /
 ---
 
-<img src="/assets/images/profile_picture.png" alt="Koh Jin Hong, Lucas" style="width:150px; border-radius:50%;">
-
-# KOH JIN HONG, LUCAS
-**Master of Science Candidate, Electronic Engineering**
-
-[Email: {{ site.email }}](mailto:{{ site.email }}) | [LinkedIn]({{ site.linkedin_url }}) | [GitHub](https://github.com/{{ site.github_username }}) | [Download Resume](/assets/Resume_Lucas.pdf)
+<div style="text-align: center;">
+  <img src="{{ "/assets/images/profile_picture.png" | relative_url }}" alt="Koh Jin Hong, Lucas" width="200" height="200" style="border-radius: 50%; object-fit: cover; margin-bottom: 1em; border: 3px solid #eee;">
+  <h1>{{ site.author.name }}</h1>
+  <p style="font-size: 1.1em; color: #555;">Master of Science Candidate, Electronic Engineering</p>
+</div>
 
 ## Summary
 Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) with a robust foundation in networking (TCP/IP, 5G, IAB) and programming (Python, C++). Demonstrates practical experience from internships and academic projects in automating firmware testing (Docker, Jenkins), developing backend systems (Node.js, AWS, MongoDB), and researching distributed link scheduling for IAB Networks. Eager to apply expertise in system development, integration, and innovative technologies to a challenging engineering role.
+
+---
 
 ## Key Skills
 *   **Programming Languages:** Python, C, C++, JavaScript (Node.js)
@@ -23,14 +25,16 @@ Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) w
 ---
 
 ## Featured Projects
-Here are some of the projects I've worked on. Click to learn more!
+Below are some highlights of my work. For a full list, please visit the [Projects Page](./projects/).
 
-{% for project in site.projects reversed %}
-### [{{ project.title }}]({{ project.url }})
-*{{ project.short_description }}*
-**Technologies:** {{ project.technologies | join: ", " }}
-{% endfor %}
+{% for project in site.projects limit:2 %}
+### [{{ project.title }}]({{ project.url | relative_url }})
+{% if project.short_description %}
+{{ project.short_description }}
+{% endif %}
+{% if project.technologies %}
 
+*Technologies: {{ project.technologies | join: ", " }}*
+{% endif %}
 ---
-<!-- You can add an Education section here if desired, similar to your resume -->
-<!-- You can add an Experience section here too, or link to resume -->
+{% endfor %}
