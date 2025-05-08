@@ -12,8 +12,8 @@ linkedin_url: https://linkedin.com/in/lucasjinhong
 
 # Choose a Jekyll theme (e.g., one of GitHub's defaults or a custom one)
 # theme: jekyll-theme-minimal
-theme: jekyll-theme-cayman
-# theme: minima
+# theme: jekyll-theme-cayman
+theme: minima
 # For more advanced themes like Minimal Mistakes, you'd add it as a remote theme or gem.
 
 # For navigating to project pages easily (optional, depends on theme)

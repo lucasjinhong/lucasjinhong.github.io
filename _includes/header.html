@@ -1,0 +1,15 @@
+<header class="site-header">
+    <div class="container">
+        <a class="site-title" href="{{ "/" | relative_url }}">{{ site.author }}</a>
+        <nav class="site-nav">
+            <!-- Example Navigation -->
+            <a href="{{ "/" | relative_url }}">Home</a>
+            <a href="{{ "/#featured-projects" | relative_url }}">Projects</a> <!-- Link to section on homepage -->
+            <!-- You could add a link to a dedicated projects listing page if you create one -->
+            <!-- <a href="{{ "/projects/" | relative_url }}">All Projects</a> -->
+            <a href="{{ "/assets/resume_kohjinhonglucas.pdf" | relative_url }}" target="_blank">Resume</a>
+            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
+    </div>
+</header>

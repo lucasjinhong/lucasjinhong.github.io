@@ -8,7 +8,7 @@ title: Home
 # KOH JIN HONG, LUCAS
 **Master of Science Candidate, Electronic Engineering**
 
-[Email: {{ site.email }}](mailto:{{ site.email }}) | [LinkedIn]({{ site.linkedin_url }}) | [GitHub](https://github.com/{{ site.github_username }}) | [Download Resume](/assets/resume_kohjinhonglucas.pdf)
+[Email: {{ site.email }}](mailto:{{ site.email }}) | [LinkedIn]({{ site.linkedin_url }}) | [GitHub](https://github.com/{{ site.github_username }}) | [Download Resume](/assets/Resume_Lucas.pdf)
 
 ## Summary
 Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) with a robust foundation in networking (TCP/IP, 5G, IAB) and programming (Python, C++). Demonstrates practical experience from internships and academic projects in automating firmware testing (Docker, Jenkins), developing backend systems (Node.js, AWS, MongoDB), and researching distributed link scheduling for IAB Networks. Eager to apply expertise in system development, integration, and innovative technologies to a challenging engineering role.
