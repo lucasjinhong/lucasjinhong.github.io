@@ -1,0 +1,45 @@
+---
+# Only an empty front matter is required
+---
+@charset "utf-8";
+
+// Import the Minimal Mistakes theme styles
+@import "minimal-mistakes";
+
+// --- Custom CSS Overrides ---
+.entries-grid {
+  display: flex;         // Use Flexbox
+  flex-wrap: wrap;       // Allow items to wrap to the next line
+  margin-left: -1em;     // Negative margin to counteract item padding/margin (adjust as needed)
+  margin-right: -1em;    // Negative margin (adjust as needed)
+
+  // Clear any floats that might be set by other theme rules on this element
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.entries-grid .grid__item {
+  float: none !important;       // Remove the theme's float
+  width: auto !important;       // Let flexbox control the width initially
+  flex: 1 1 300px;        // Grow, shrink, with a basis of 300px (adjust 300px for desired item width)
+  margin-bottom: 2em;      // Keep existing bottom margin
+  padding-left: 1em;       // Add some spacing (adjust as needed)
+  padding-right: 1em;      // Add some spacing (adjust as needed)
+  box-sizing: border-box;  // Ensure padding doesn't add to width
+
+  // Remove theme's specific nth-child margin overrides for floats if they interfere
+  // You might need to inspect and target these specifically if problems persist
+  // e.g.,
+  // &:nth-child(2n + 1),
+  // &:nth-child(2n + 2),
+  // &:nth-child(4n + 1),
+  // &:nth-child(4n + 2),
+  // &:nth-child(4n + 3),
+  // &:nth-child(4n + 4) {
+  //   margin-left: 0 !important; // Or adjust to fit flexbox spacing
+  //   clear: none !important;
+  // }
+}

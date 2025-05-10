@@ -63,7 +63,7 @@ Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) w
 
 {% assign sorted_projects = site.projects | sort: "date" | reverse %}
 {% if sorted_projects.size > 0 %}
-  <div class="entries-{{ entries_layout | default: 'list' }}"> 
+  <div class="entries-grid">
     {% for project in sorted_projects %}
       {% if project.title %}
         {% include archive-single.html type="grid" post=project %}
