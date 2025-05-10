@@ -6,6 +6,11 @@
 // Import the Minimal Mistakes theme styles
 @import "minimal-mistakes";
 
+html {
+  font-size: 14px; // Default is often 16px. Try 15px, 14px, etc.
+                   // You can also use percentages: font-size: 90%;
+}
+
 // --- Custom CSS Overrides ---
 .entries-grid {
   display: flex;         // Use Flexbox
