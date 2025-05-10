@@ -57,30 +57,34 @@ collections:
     output: true
     permalink: /projects/:path/
 
-# Defaults
+# _config.yml
+
+# ... other configurations ...
+
 defaults:
   - scope:
       path: ""
-      type: posts
+      type: posts # Settings for blog posts
     values:
       layout: single
       author_profile: true
       read_time: true
-      share: true
+      show_date: true
       related: true
   - scope:
       path: ""
-      type: projects
+      type: projects # Settings for your projects
     values:
       layout: single
       author_profile: true
-      share: true
+      show_date: false
   - scope:
       path: ""
-      type: pages
+      type: pages # Settings for regular pages (like about.md, etc.)
     values:
       layout: single
       author_profile: true
+      show_date: false
 
 # Footer
 footer:

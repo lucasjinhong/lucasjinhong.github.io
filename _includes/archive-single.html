@@ -1,0 +1,34 @@
+{%- if include.type == "grid" -%}
+  {%- if include.post.header.teaser -%}
+    {%- capture teaser_val -%}{{ include.post.header.teaser }}{%- endcapture -%}
+  {%- else -%}
+    {%- assign teaser_val = site.teaser -%}
+  {%- endif -%}
+  {%- if teaser_val -%}
+    <div class="archive__item-teaser">
+      <img src="{{ teaser_val | relative_url }}" alt="">
+    </div>
+  {%- endif -%}
+
+  <h2 class="archive__item-title no_toc" itemprop="headline">
+    {%- if include.post.link -%}
+      <a href="{{ include.post.link }}">{{ include.post.title }}</a> <a href="{{ include.post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+    {%- else -%}
+      <a href="{{ include.post.url | relative_url }}" rel="permalink">{{ include.post.title }}</a>
+    {%- endif -%}
+  </h2>
+
+  {%- comment %} You can now try re-enabling this.
+      If it causes issues, you'll need to debug _includes/page__meta.html as well,
+      or ensure it correctly uses 'include.post' if it's expecting a 'post' variable.
+      The theme's page__meta.html usually works with the global 'page' or 'post'
+      object if it's a direct page, or if 'post' is explicitly passed.
+      When included from archive-single, 'post' might be 'include.post'.
+  {%- endcomment -%}
+  {%- include page__meta.html type=include.type post=include.post -%} <!-- Explicitly pass include.post as 'post' -->
+
+
+  {%- if include.post.excerpt -%}
+    <p class="archive__item-excerpt" itemprop="description">{{ include.post.excerpt | markdownify | strip_html | truncate: 160 }}</p>
+  {%- endif -%}
+{%- endif -%}

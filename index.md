@@ -1,7 +1,8 @@
 ---
 layout: single
 permalink: /
-author_profile: true # Shows the author sidebar
+author_profile: true
+entries_layout: grid
 ---
 
 <div style="text-align: center; margin-bottom: 2em;">
@@ -57,12 +58,12 @@ Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) w
 
 ---
 
-<h2 id="my-projects">My Projects</h2>
-Here are some of the key projects I've worked on. Click to learn more about each one.
+<h2 id="my-projects">My Projects Debug</h2>
+<p>Here are some of the key projects I've worked on. Click to learn more about each one.</p>
 
-{% assign sorted_projects = site.projects | sort: "date" | reverse %} <!-- Ensure your projects have a 'date' in front matter -->
+{% assign sorted_projects = site.projects | sort: "date" | reverse %}
 {% if sorted_projects.size > 0 %}
-  <div class="entries-{{ entries_layout | default: 'list' }}">
+  <div class="entries-{{ entries_layout | default: 'list' }}"> 
     {% for project in sorted_projects %}
       {% if project.title %}
         {% include archive-single.html type="grid" post=project %}
@@ -73,7 +74,6 @@ Here are some of the key projects I've worked on. Click to learn more about each
   <p><em>Detailed project descriptions coming soon. You can see an overview of my experience in the sections above.</em></p>
 {% endif %}
 
----
 ---
 
 <h2 id="contact">Get in Touch</h2>
