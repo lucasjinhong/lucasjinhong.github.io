@@ -1,0 +1,11 @@
+# _data/navigation.yml
+main:
+  - title: "About"
+    url: /
+  - title: "Projects"
+    url: /#my-projects
+  - title: "Resume"
+    url: /assets/Resume_Lucas.pdf
+    target: "_blank" # Opens in new tab
+  - title: "Contact"
+    url: /#contact

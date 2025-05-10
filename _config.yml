@@ -1,40 +1,99 @@
-title: Koh Jin Hong, Lucas - Engineering Portfolio
+# Site Settings
+locale                   : "en-US"
+title                    : "Koh Jin Hong, Lucas - Engineering Portfolio"
+title_separator          : "-"
+name                     : "Koh Jin Hong, Lucas"
+description              : "Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) with a robust foundation in networking (TCP/IP, 5G, IAB) and programming (Python, C++). Demonstrates practical experience in automating firmware testing, developing backend systems, and researching distributed link scheduling. Eager to apply expertise in system development, integration, and innovative technologies." # From Resume Summary
+url                      : "https://lucasjinhong.github.io"
+baseurl                  : ""
+repository               : "lucasjinhong/lucasjinhong.github.io" # Assumes your repo name
+
+# Outputting
+permalink                : /:categories/:title/
+paginate                 : 5
+paginate_path            : /page:num/
+timezone                 : # e.g., Asia/Taipei (Optional)
+
+# Author Details (from Resume)
 author:
-  name: Koh Jin Hong, Lucas
-  email: jinhongkh@gmail.com # Replace with your actual email
-description: >-
-  Portfolio of Koh Jin Hong, Lucas, an Electronic Engineering Master's candidate.
-  Showcasing projects in networking, firmware automation, and backend development.
-baseurl: "" # For username.github.io
-url: "https://lucasjinhong.github.io" # Replace 'lucasjinhong' with your GitHub username
-
-# Minima theme specific settings
-minima:
-  date_format: "%b %-d, %Y"
-  social_links:
-    github: lucasjinhong  # Replace with your GitHub username
-    linkedin: lucasjinhong # Replace with your LinkedIn username (the part after linkedin.com/in/)
-    # To add email to social links (optional)
-    # - { platform: email, user_url: "mailto:jinhongkh@gmail.com" }
-
-
-# Header pages (navigation links)
-header_pages:
-  - about.md
-  - projects.md
-  - assets/resume_koh_jin_hong_lucas.pdf # Direct link to resume in navigation
+  name                   : "Koh Jin Hong, Lucas"
+  avatar                 : "/assets/images/profile_picture.png" # MAKE SURE YOU HAVE THIS IMAGE
+  bio                    : "Master of Science Candidate, Electronic Engineering. Passionate about networking, firmware, and backend solutions." # Shorter bio for sidebar
+  location               : "Johor, Malaysia" # Current location for studies
+  # email defined below to avoid duplication if theme displays it from here
+  links:
+    - label              : "Email"
+      icon               : "fas fa-fw fa-envelope-square"
+      url                : "mailto:jinhongkh@gmail.com"
+    - label              : "LinkedIn"
+      icon               : "fab fa-fw fa-linkedin"
+      url                : "https://www.linkedin.com/in/lucasjinhong"
+    - label              : "GitHub"
+      icon               : "fab fa-fw fa-github"
+      url                : "https://github.com/lucasjinhong"
+    - label              : "Phone/WhatsApp" # Optional for sidebar, more common in a contact section
+      icon               : "fas fa-fw fa-phone-square-alt" # or "fab fa-fw fa-whatsapp"
+      url                : "tel:+601110571013"
+    # - label            : "Resume PDF" # Can be added here too
+    #   icon             : "fas fa-fw fa-file-pdf"
+    #   url              : "/assets/resume_koh_jin_hong_lucas.pdf"
 
 # Build settings
-theme: minima # If GitHub Pages doesn't automatically pick it up, or for local build
+remote_theme             : "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin    : "default" # Choose a skin: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Plugins
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-feed
+  - jekyll-include-cache
   - jekyll-seo-tag
 
-# Collections for projects
+# Collections
 collections:
   projects:
     output: true
     permalink: /projects/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      share: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/lucasjinhong"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/lucasjinhong"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:jinhongkh@gmail.com"
 
 # Exclude from processing
 exclude:
