@@ -1,19 +1,19 @@
 ---
 title: "Distributed Link Scheduling for IAB Network By Considering Message Exchange Delay"
-permalink: /distributed_IAB/
+permalink: /distributed_iab/
 date: 2025-05-10
 excerpt: "A master's thesis project focusing on a distributed, pipelined resource management architecture for IAB networks to minimize end-to-end packet delay, considering information propagation latency and half-duplex constraints."
 header:
-  teaser: /assets/images/automation_banner.png # Placeholder, as in your template
+  teaser: /assets/images/iab_banner.png
 sidebar:
   - title: "Role"
     text: "Master's Researcher / Thesis Student"
   - title: "Core Technologies"
-    text: "Wireless Networks (IAB), Distributed Systems, Network Scheduling, Resource Management, TDMA, DAG Modeling, Simulation (conceptual)"
+    text: "Wireless Networks (IAB), Distributed Systems, Network Scheduling, Resource Management, TDMA"
   - title: "Institution"
     text: "National Taipei University of Technology, Department of Electronic Engineering"
   - title: "Duration"
-    text: "Approx. 2 Years (Typical for Master's Thesis)"
+    text: "Ongoing"
 tags:
   - IAB Networks
   - 5G/6G
@@ -39,32 +39,25 @@ As the sole researcher for this master's thesis, my responsibilities encompassed
 *   Conducting an extensive literature review of existing resource management schemes for IAB networks, identifying research gaps, particularly in distributed approaches that rigorously account for information propagation delays.
 *   Formulating the system model, including the network topology (DAG), node operational modes (Transmit, Receive, Idle under half-duplex constraints), and communication assumptions (TDMA).
 *   Defining the core network objective: minimization of average end-to-end packet delay.
-*   Designing a novel distributed operational architecture to manage link scheduling and packet forwarding in a coordinated yet decentralized manner.
-*   Conceptualizing the simulation methodology and performance metrics for evaluating the proposed framework against existing approaches.
-*   Authoring the comprehensive master's thesis document detailing the research.
+*   Designing the novel distributed operational architecture to manage link scheduling and packet forwarding in a coordinated yet decentralized manner.
+*   Developing the core 'Proposed Method' (the specific algorithms and logic) that enables the designed architecture to function effectively and achieve its objectives.
 
 ## Technical Approach
 
-The project proposed a distributed forwarding mechanism operating on a cyclical, pipelined architecture within each Transmission Time Interval (TTI). Key aspects of the technical approach included:
+The project proposed a distributed forwarding mechanism operating on a cyclical, pipelined architecture within each Transmission Time Interval (TTI). This framework was designed to empower individual IAB nodes with local decision-making capabilities while ensuring network-wide coordination and adherence to operational constraints. Key aspects of the technical approach included:
 
-*   **Distributed Control:** Empowering individual IAB nodes to make local scheduling and forwarding decisions, enhancing scalability and adaptability.
-*   **Pipelined Operational Architecture:** Each TTI was structured into distinct phases:
-    1.  **Information Exchange:** Nodes share necessary control information with neighbors.
-    2.  **Operation Mode Decision:** Nodes deterministically resolve their operational mode (e.g., transmit, receive, idle) for the current TTI based on exchanged information and pre-calculated priorities, respecting half-duplex constraints.
-    3.  **Link Scheduling (Proactive):** Nodes calculate link activation priorities for a *future* TTI (specifically, t+2), to account for multi-hop information propagation delays.
-    4.  **Packet Forwarding Execution:** Nodes perform data transmission or reception based on the decided operation mode for the current TTI.
-*   **Information Latency Management:** The two-TTI pipeline for link scheduling (scheduling in TTI `t` for execution in TTI `t+2`) was a core design choice to ensure that all necessary coordination information, even if relayed over multiple hops, is available before execution.
-*   **Conflict Resolution:** A deterministic process was designed for nodes to select their operational mode, ensuring conflict-free link activations based on shared link priorities.
-*   **Dynamic Routing Support:** The framework allowed for local forwarding decisions, enabling adaptability to changing network conditions and supporting potential multi-path opportunities.
-
-*(Specific algorithms for link weight calculation or next-hop selection, as detailed in Chapter 5 of the thesis, are omitted here as per the request.)*
-
+*   **Distributed Control:** Empowering individual IAB nodes to make local scheduling and forwarding decisions, enhancing scalability and adaptability compared to centralized solutions.
+*   **Pipelined Operational Architecture:** Each TTI was structured into distinct operational phases for information exchange, mode decision, future link scheduling, and current packet forwarding. This pipelining was central to managing dependencies and latencies.
+*   **Proactive Information Latency Management:** The core of the design involved a multi-TTI pipeline for link scheduling. This ensured that necessary coordination information, even if relayed over several hops, was available at each node *before* it made decisions for the current TTI, thus explicitly accounting for propagation delays.
+*   **Prioritized Conflict Resolution:** A deterministic process was designed for nodes to select their operational mode (e.g., Transmit, Receive, or Idle). This process utilized shared link priorities, calculated in advance, to ensure conflict-free link activations that respect half-duplex constraints.
+*   **Support for Dynamic Forwarding:** While scheduling was coordinated, nodes retained local control over packet forwarding choices when a transmission opportunity arose. This allowed for adaptability to changing network conditions and could leverage local forwarding tables to support potential multi-path opportunities.
+**Key Challenges Addressed:**
 ## Impact & Results (Generalized)
 
 The research aimed to achieve the following impacts:
 *   **Reduced Packet Delay:** The primary goal was to demonstrate a significant reduction in average end-to-end packet delay in IAB networks compared to other distributed schemes that do not explicitly manage information latency.
 *   **Improved Scalability:** By adopting a distributed architecture, the solution was designed to be more scalable for larger IAB deployments than centralized approaches.
-*   **Enhanced Robustness:** Decentralized decision-making can lead to increased robustness against single node failures (though not the primary focus, it's an inherent benefit).
+*   **Enhanced Robustness:** Decentralized decision-making is intended to improve overall network resilience, including better handling of severe congestion and increased robustness against single node failures.
 *   **Practical Framework:** The proposed architecture provides a practical framework for implementing distributed resource management in real-world IAB systems by considering operational constraints like signaling delays.
 
 ## What I Learned
