@@ -30,6 +30,11 @@ This project involved the creation of an interactive visual novel game. The game
 
 As the system prototyper, my primary objective was to design and implement the foundational architecture that would seamlessly connect the user interface (developed by one team member) with the game's story logic and core mechanics (developed by another team member).
 
+## Source Code
+
+The complete source code, including all modules and configuration files, is hosted on GitHub:
+*   [lucasjinhong/The_Imitation_Game](https://github.com/lucasjinhong/The_Imitation_Game)
+
 ## My Contributions & Key Responsibilities
 
 *   **System Architecture Design:** Designed the overall flow of data and control between the UI, story engine, and game mechanic modules.
