@@ -86,6 +86,9 @@ The core of Topogen revolves around transforming a high-level grid representatio
     *   `utils/`: Helper functions for common tasks (error handling, math, graph operations).
     *   `config/`: Manages physical layer parameters and default formulas.
 
+7.  **Testing (`tests\`)** 
+    *   Use pytest to set up all function tests to ensure they work correctly and have no issues.
+
 **Key Challenges Addressed:**
 
 *   **Abstract to Concrete Mapping:** Translating the simple grid input into a rich set of interconnected objects with meaningful attributes.

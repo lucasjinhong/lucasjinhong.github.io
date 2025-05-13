@@ -23,6 +23,7 @@ tags:
   - Low Latency
   - Resource Management
   - TDMA
+  - Python (For Simulation)
 ---
 
 ## Project Overview
@@ -51,7 +52,12 @@ The project proposed a distributed forwarding mechanism operating on a cyclical,
 *   **Proactive Information Latency Management:** The core of the design involved a multi-TTI pipeline for link scheduling. This ensured that necessary coordination information, even if relayed over several hops, was available at each node *before* it made decisions for the current TTI, thus explicitly accounting for propagation delays.
 *   **Prioritized Conflict Resolution:** A deterministic process was designed for nodes to select their operational mode (e.g., Transmit, Receive, or Idle). This process utilized shared link priorities, calculated in advance, to ensure conflict-free link activations that respect half-duplex constraints.
 *   **Support for Dynamic Forwarding:** While scheduling was coordinated, nodes retained local control over packet forwarding choices when a transmission opportunity arose. This allowed for adaptability to changing network conditions and could leverage local forwarding tables to support potential multi-path opportunities.
+
 **Key Challenges Addressed:**
+*  **Minimizing end-to-end packet delay:** This is stated as the primary objective and a general challenge in IAB networks.
+*  **Handling Dynamic User Requests:** User requests are not static, so the method should be able to handle potential congestion at various points.
+*  **Addressing information propagation delays (latency) in distributed multi-hop environments:** This is a core focus, with the project explicitly aiming to account for these delays in its decision-making process.
+
 ## Impact & Results (Generalized)
 
 The research aimed to achieve the following impacts:

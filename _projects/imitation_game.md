@@ -81,13 +81,13 @@ The system was built around a layered architecture:
 
 The `parameters` dictionary was key to this approach. It carried all necessary information, such as the current level/scene, last question/answer, game configuration (chances, retry flags), and UI button states. This dictionary was passed down through the layers and updated, with the modified version returned to the UI for rendering.
 
-
 **Key Challenges Addressed:**
 
 *   **Decoupling UI from Game Logic:** Ensuring the UI was not tightly bound to the specifics of each game level or puzzle, allowing for easier maintenance and independent development by team members.
 *   **Managing Complex Game State:** Designing a manageable system (the `parameters` dictionary) to track various aspects of the game state across different modules.
 *   **Dynamic Content Presentation:** Enabling the UI to dynamically display different story segments, questions, and feedback based on the evolving game state.
 *   **Integrating Diverse Components:** Successfully bringing together separately developed UI elements, story scripts, and codec mechanics into a cohesive, functioning system.
+*   **Parameter Uniformity** Ensure that the parameters used across all functions are consistent to guarantee the game runs successfully.
 
 ## Impact & Results (Generalized)
 
