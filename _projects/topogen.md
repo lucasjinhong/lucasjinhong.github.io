@@ -1,4 +1,5 @@
 ---
+
 title: "Topogen - Automated Network Topology Generator"
 permalink: /projects/topogen/
 date: 2024-12-27
@@ -7,11 +8,11 @@ header:
   teaser: /assets/images/topogen_banner.png
 sidebar:
   - title: "Role"
-    text: "Creator / Lead Developer"
+    text: "Creator"
   - title: "Core Technologies"
     text: "Python, Setuptools"
-  - title: "Company"
-    text: "Personal Project (lucasjinhong)"
+  - title: "Context"
+    text: "Personal Project"
   - title: "Duration"
     text: "Ongoing" # Or specify timeframe
 tags:

@@ -10,7 +10,7 @@ sidebar:
     text: "System Architect / Prototyper"
   - title: "Core Technologies"
     text: "Python, PyQt6, Custom Game Logic Modules"
-  - title: "Team Structure"
+  - title: "Context"
     text: "Collaborated with a UI designer and a Novel/Story writer."
   - title: "Duration"
     text: "May 2023 - June 2023"
