@@ -116,6 +116,6 @@ Please feel free to reach out through any of the channels below. I look forward 
 
   <p style="margin-top: 1em;">
     <i class="fas fa-fw fa-home" aria-hidden="true"></i>
-    <strong>Home Town:</strong> Johor, Malaysia <!-- Assuming this is static or you add it to _config.yml -->
+    <strong>Nationality:</strong> Malaysian <!-- Assuming this is static or you add it to _config.yml -->
   </p>
 </div>
