@@ -6,8 +6,9 @@ entries_layout: grid
 ---
 
 <div style="text-align: center; margin-bottom: 2em;">
-  <h1>{{ site.name }}</h1>
-  <p class="lead" style="font-size: 1.2em; color: #555;">Master of Science Candidate, Electronic Engineering</p>
+  <h1>{{ site.name }}</h1> <!-- KOH JIN HONG, LUCAS -->
+  <p class="lead" style="font-size: 1.2em; color: #555;">M.S. Computer Science Graduate | Software Engineer</p>
+  <p class="lead" style="font-size: 1.1em; color: #666;">Backend, Cloud (AWS), Automation, Network Infrastructure & Security</p>
   <p style="margin-top: 1em;">
     <a href="{{ "/assets/Resume_Lucas.pdf" | relative_url }}" class="btn btn--success btn--large" target="_blank" download>Download Resume (PDF)</a>
   </p>
@@ -15,7 +16,7 @@ entries_layout: grid
 
 ## Summary
 {% capture resume_summary %}
-Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) with a robust foundation in networking (TCP/IP, 5G, IAB) and programming (Python, C++). Demonstrates practical experience from internships and academic projects in automating firmware testing (Docker, Jenkins), developing backend systems (Node.js, AWS, MongoDB), and researching distributed link scheduling for IAB Networks. Eager to apply expertise in system development, integration, and innovative technologies to a challenging engineering role.
+Highly motivated M.S. Electronic Engineering Graduate (expected Aug 2025) with a strong foundation in software engineering, specializing in backend systems, cloud (AWS), automation, and network infrastructure. Proven ability in the full development lifecycle, network configuration, and troubleshooting. Eager to apply expertise in Python, Node.js, AWS, Docker, and Jenkins to a challenging Software Engineer role.
 {% endcapture %}
 {{ resume_summary | markdownify }}
 
@@ -26,16 +27,17 @@ Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) w
 ### Master of Science, Electronic Engineering
 *2023 - Present*
 **National Taipei University of Technology**
-*   Authored graduate paper on Distributed Link Scheduling for IAB Networks, investigating Layer 2 5G architecture and implementing an optimized packet forwarding algorithm for half-duplex scenarios.
-*   Configured and deployed security tunnels and firewalls using FortiGate technology for Taiwan Space Agency projects.
+*   Researched & Authored Graduate Paper: Investigated Distributed Link Scheduling for IAB Networks, focusing on Layer 2 5G architecture and implementing an optimized packet forwarding algorithm for half-duplex scenarios.
+*   Network Security (Taiwan Space Agency Projects): Configured and deployed FortiGate security tunnels and firewalls, enhancing network security for critical infrastructure.
 *   Served as Teaching Assistant for Master's level courses (Python, C, Algorithms), providing student support and assisting instructors with course materials.
-*   Resolved network connectivity issues (e.g., IP conflicts, configuration errors) as a part-time member of the university's computer networking centre.
+*   Network Support (University Computer Networking Centre): Resolved network connectivity issues, including IP conflicts and configuration errors, ensuring operational uptime for university users.
 
 ### Bachelor of Science, Electronic Engineering
 *2019 - 2023*
 **National Taipei University of Technology**
-*   Developed a user login system server using Node.js, integrating it with a MongoDB database and utilizing Amazon Web Services (AWS) for backend infrastructure.
-*   Designed and implemented a visual novel game prototype using PyQt6, developing the core Python-based architecture.
+*   Backend System Development (Node.js, MongoDB, AWS): Architected and implemented a secure and scalable user login system server. Leveraged Node.js for server-side logic, MongoDB for efficient user data management, and AWS for robust cloud-based backend infrastructure.
+*   Game Prototyping & Python Architecture: Spearheaded the development of a visual novel game prototype by architecting its core Python-based engine and game flow. Implemented the user interface and interactive elements using the PyQt6 framework.
+
 
 ---
 
@@ -44,15 +46,16 @@ Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) w
 ### Junior Firmware Engineer (Intern)
 *2022 - 2023*
 **Sierra Wireless**
-*   Engineered an automated firmware testing testbed using Docker and Jenkins, automating daily validation tests to run nightly, significantly streamlining the validation workflow.
-*   Executed comprehensive validation and regression testing on new firmware releases; identified, documented, and reported bugs to ensure quality prior to deployment.
-
+*   **Automated Firmware Validation Testbed (Docker, Jenkins, Ansible):** Engineered and deployed a comprehensive automated firmware testing testbed. Leveraged Docker for containerization, Jenkins for CI/CD pipelines automating nightly validation tests, and Ansible for streamlined environment provisioning and automated test execution during testbed development. This significantly enhanced workflow efficiency and test reliability.
+*   **Firmware Validation & Regression Testing:** Executed comprehensive validation and regression testing for new firmware releases. Meticulously identified, documented, and reported software defects using bug tracking systems (e.g., Jira), ensuring high product quality prior to deployment.
 ---
 
 ## Skills
-*   **Programming Languages:** Python, C, C++, JavaScript (Node.js)
-*   **Networking & Protocols:** TCP/IP, 5G Architecture Concepts, IAB Networks, Fortinet (FortiGate)
-*   **Development Tools & Platforms:** Git, Linux, Jenkins, Docker, Jira, AWS
+*   **Programming Languages:** Python, JavaScript (Node.js), C, C++
+*   **Backend & API Development:** Node.js, MongoDB, AWS (EC2, S3, etc.), RESTful APIs, JWT
+*   **Automation & DevOps:** Docker, Jenkins, Ansible, CI/CD Pipelines
+*   **Networking & Security:** TCP/IP, FortiGate (Firewalls, Security Tunnels), Network Configuration, Network Troubleshooting, 5G Architecture Concepts, IAB Networks
+*   **Development Tools & Platforms:** Git, Linux, Jira
 *   **Databases:** MongoDB
 *   **Languages:** Chinese (Fluent), English (Proficient, TOEIC: 825)
 
@@ -77,9 +80,7 @@ Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) w
 ---
 
 <h2 id="contact">Get in Touch</h2>
-I'm actively seeking challenging opportunities and am always open to discussing innovative projects, collaborations, or roles where I can contribute my skills in networking and software development.
-
-Please feel free to reach out through any of the channels below. I look forward to connecting with you!
+I'm actively seeking challenging opportunities and am always open to discussing innovative projects, collaborations, or roles where I can contribute my skills. Please feel free to reach out through any of the channels below. I look forward to connecting with you!
 
 <div class="contact-methods" style="margin-top: 1.5em;">
   {% assign email_link = site.author.links | where: "label", "Email" | first %}
