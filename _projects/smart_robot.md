@@ -35,7 +35,7 @@ The primary objective was to create a scalable and secure RESTful API that the c
 ## Source Code
 
 The complete server-side source code, including all modules and configuration files, is hosted on GitHub:
-*   [lucasjinhong/Project_Smart_Cleaning_Robot](https://github.com/lucasjinhong/Project_Smart_Cleaning_Robot) (Replace with your actual link if different)
+*   [lucasjinhong/Project_Smart_Cleaning_Robot](https://github.com/lucasjinhong/Project_Smart_Cleaning_Robot)
 
 ## My Contributions & Key Responsibilities
 
