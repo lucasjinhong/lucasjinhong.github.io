@@ -52,7 +52,7 @@ Highly motivated M.S. Electronic Engineering Graduate (expected Aug 2025) with a
 
 ## Skills
 *   **Programming Languages:** Python, JavaScript (Node.js), C, C++
-*   **Backend & API Development:** Node.js, MongoDB, AWS (EC2, S3, etc.), RESTful APIs, JWT
+*   **Backend & API Development:** Node.js, MongoDB, AWS (EC2), RESTful APIs, JWT
 *   **Automation & DevOps:** Docker, Jenkins, Ansible, CI/CD Pipelines
 *   **Networking & Security:** TCP/IP, FortiGate (Firewalls, Security Tunnels), Network Configuration, Network Troubleshooting, 5G Architecture Concepts, IAB Networks
 *   **Development Tools & Platforms:** Git, Linux, Jira
