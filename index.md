@@ -27,16 +27,16 @@ Highly motivated M.S. Electronic Engineering Graduate (expected Aug 2025) with a
 ### Master of Science, Electronic Engineering
 *2023 - Present*
 **National Taipei University of Technology**
-*   Researched & Authored Graduate Paper: Investigated Distributed Link Scheduling for IAB Networks, focusing on Layer 2 5G architecture and implementing an optimized packet forwarding algorithm for half-duplex scenarios.
-*   Network Security (Taiwan Space Agency Projects): Configured and deployed FortiGate security tunnels and firewalls, enhancing network security for critical infrastructure.
-*   Served as Teaching Assistant for Master's level courses (Python, C, Algorithms), providing student support and assisting instructors with course materials.
-*   Network Support (University Computer Networking Centre): Resolved network connectivity issues, including IP conflicts and configuration errors, ensuring operational uptime for university users.
+*   **Researched & Authored Graduate Paper:** Investigated Distributed Link Scheduling for IAB Networks, focusing on Layer 2 5G architecture and implementing an optimized packet forwarding algorithm for half-duplex scenarios.
+*   **Network Security (Taiwan Space Agency Projects):** Configured and deployed FortiGate security tunnels and firewalls, enhancing network security for critical infrastructure.
+*   **Teaching Assistant(Python, C, Algorithms):** Served as Teaching Assistant for Master's level courses, providing student support and assisting instructors with course materials.
+*   **Network Support (University Computer Networking Centre):** Resolved network connectivity issues, including IP conflicts and configuration errors, ensuring operational uptime for university users.
 
 ### Bachelor of Science, Electronic Engineering
 *2019 - 2023*
 **National Taipei University of Technology**
-*   Backend System Development (Node.js, MongoDB, AWS): Architected and implemented a secure and scalable user login system server. Leveraged Node.js for server-side logic, MongoDB for efficient user data management, and AWS for robust cloud-based backend infrastructure.
-*   Game Prototyping & Python Architecture: Spearheaded the development of a visual novel game prototype by architecting its core Python-based engine and game flow. Implemented the user interface and interactive elements using the PyQt6 framework.
+*   **Backend System Development (Node.js, MongoDB, AWS):** Architected and implemented a secure and scalable user login system server. Leveraged Node.js for server-side logic, MongoDB for efficient user data management, and AWS for robust cloud-based backend infrastructure.
+*   **Game Prototyping & Python Architecture:** Spearheaded the development of a visual novel game prototype by architecting its core Python-based engine and game flow. Implemented the user interface and interactive elements using the PyQt6 framework.
 
 
 ---
