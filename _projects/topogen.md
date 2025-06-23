@@ -2,121 +2,79 @@
 
 title: "Topogen - Automated Network Topology Generator"
 permalink: /projects/topogen/
-date: 2024-12-27
-excerpt: "A Python package for automatically generating and setting up network topologies, particularly for Integrated Access and Backhaul (IAB) scenarios, from a graph-based input."
+date: 2024-05-15
+excerpt: "A Python package that automates the generation of complex network topologies from simple graph-based inputs, designed for researchers and network engineers in fields like Integrated Access and Backhaul (IAB)."
 header:
   teaser: /assets/images/topogen_banner.png
 sidebar:
   - title: "Role"
-    text: "Creator"
+    text: "Creator / Lead Developer"
   - title: "Core Technologies"
-    text: "Python, Setuptools"
+    text: "Python, Setuptools, Pytest, PyYAML, Graph Algorithms"
   - title: "Context"
     text: "Personal Project"
   - title: "Duration"
-    text: "Ongoing" # Or specify timeframe
+    text: "In Progress"
 tags:
   - Python
-  - Network Topology
   - Network Simulation
-  - IAB (Integrated Access and Backhaul)
   - Automation
   - Graph Theory
+  - IAB
+  - Package Development
 ---
 
 ## Project Overview
 
-Topogen is a Python package designed to streamline the creation of network topologies. It automates the process of generating interconnected nodes and links based on a user-defined graph structure. This is particularly useful for researchers and developers working on network simulations, performance analysis, or protocol design, especially in contexts like Integrated Access and Backhaul (IAB) networks.
+Topogen is a Python package designed to automate the complex and time-consuming process of creating network topologies for simulation and analysis. It empowers researchers and network engineers, particularly in emerging fields like Integrated Access and Backhaul (IAB), to rapidly generate and configure network structures from a simple grid-based input.
 
-The package takes a simple matrix representation of a network grid as input and constructs a `Topo` object. This object encapsulates:
-*   `Node` objects with attributes like type (donor/node), coordinates, parent/child relationships, and connected links.
-*   `Link` objects connecting nodes, featuring calculated data rates based on distance and configurable physical layer parameters (defaulting to the Shannon Capacity formula).
-*   Information about all possible paths from a designated 'donor' node to all other nodes in the topology.
-*   Identification of 'conflict nodes' which might interfere with each other.
-
-Topogen aims to provide a flexible and extensible foundation for building and analyzing various network configurations.
+The package constructs a rich `Topo` object containing nodes, links with physically-aware data rates, all possible communication paths from a source 'donor' node, and other critical network information, providing a robust foundation for advanced analysis and experimentation.
 
 ## Source Code
 
-The complete source code for Topogen, including all modules and configuration files, is hosted on GitHub:
+The complete source code, including tests and configuration, is hosted on GitHub:
 *   [lucasjinhong/topogen](https://github.com/lucasjinhong/topogen)
 
 ## My Contributions & Key Responsibilities
 
-As the creator and primary developer of Topogen, my responsibilities encompassed the entire development lifecycle:
+As the creator of Topogen, I was responsible for the entire project lifecycle:
 
-*   **Conceptualization and Design:** Defining the core abstractions (`Node`, `Link`, `Topo`) and the overall architecture of the package.
-*   **Algorithm Development:**
-    *   Implementing the logic to parse the input graph and instantiate `Node` objects with appropriate coordinates and connectivity (`generate_nodes_from_graph`).
-    *   Developing the mechanism for establishing links between nodes based on proximity (`max_dist_to_connect_nodes`) and hierarchical relationships.
-    *   Creating the data rate calculation module, incorporating physical distance (`size_of_grid_len`) and a configurable channel model (e.g., Shannon Capacity from `config.py`).
-    *   Implementing pathfinding algorithms (DFS) to discover all routes from the donor node (`find_paths_from_donor_to_all_nodes`).
-    *   Designing the logic for identifying conflict nodes.
-*   **Configuration Management:** Implementing the system to load physical layer parameters (bandwidth, Tx power, noise, etc.) from an external `channel_config.yaml` file, allowing for easy customization.
-*   **Utility Functions:** Developing helper functions for tasks like distance calculations, graph manipulation, and YAML data parsing.
-*   **Error Handling:** Integrating robust error checking to guide users and ensure valid inputs.
-*   **Packaging and Distribution:** Setting up the project using `setuptools` for easy installation and use as a Python package.
-*   **Testing:** (Implied by the `tests` directory) Developing unit tests to ensure the correctness and reliability of different modules and functionalities.
+*   **Full Lifecycle Development:** Led the project from conceptualization and architectural design to implementation, packaging, and testing.
+*   **Graph Parsing & Node Generation:** Developed algorithms to translate a 2D grid representation into a network of `Node` objects with accurate coordinates and connectivity.
+*   **Physics-Aware Link Modeling:** Implemented a data rate calculation engine that models link capacity based on physical distance and configurable channel parameters (e.g., Shannon Capacity), loaded from external YAML files.
+*   **Pathfinding and Analysis:** Integrated a Depth-First Search (DFS) algorithm to discover all possible communication paths from a source 'donor' node, a crucial feature for routing analysis.
+*   **Python Package Engineering:** Structured the project as an installable Python package using `setuptools` and developed a comprehensive test suite with `pytest` for robust validation.
 
 ## Technical Approach
 
-The core of Topogen revolves around transforming a high-level grid representation into a detailed network topology object.
+Topogen transforms a high-level grid input into a detailed network object through a systematic process:
 
-1.  **Input:** The process starts with a 2D Python list (`graph`) where `1`s denote potential node locations and `0`s are empty spaces. A key constraint is that the first row must contain exactly one `1`, designated as the 'donor' node.
+1.  **Grid-Based Input:** The user provides a simple 2D Python list representing the network grid, where a `1` denotes a node location. The 'donor' (source) node is identified in the first row.
 
-2.  **Node Generation (`generate_nodes_from_graph`):**
-    *   A 'donor' `Node` is created first.
-    *   A breadth-first-like traversal (using a queue) explores the graph from the donor.
-    *   For each `1` encountered in the grid, a new `Node` object is created if it's within `max_dist_to_connect_nodes` of an existing node being processed. Coordinates are assigned based on its grid position.
-    *   Parent-child relationships are established based on the connection logic and `tree_type` (DAG or TREE).
+2.  **Node & Link Generation:** The package traverses the grid to instantiate `Node` objects. It establishes parent-child relationships and creates `Link` objects between them based on proximity rules.
 
-3.  **Link Generation (`generate_links`):**
-    *   Once nodes and their parent-child relationships are set, `Link` objects are created between each parent and its children.
-    *   The physical distance between connected nodes is calculated using their coordinates and `size_of_grid_len` (scaling factor for grid units to meters).
-    *   This distance is then fed into a data rate formula (default: Shannon Capacity from `config.py`, using parameters from `channel_config.yaml`, or a user-provided custom function) to determine the `data_rate_bps` for the link.
+3.  **Data Rate Calculation:** For each link, the physical distance between nodes is calculated. This distance is then fed into a data rate formula (defaulting to the Shannon Capacity) that uses configurable physical layer parameters (bandwidth, Tx power, etc.) from a `channel_config.yaml` file. This produces a realistic, distance-dependent data rate for each link.
 
-4.  **Pathfinding (`find_paths_from_donor_to_all_nodes`):**
-    *   A Depth-First Search (DFS) algorithm is employed, starting from the 'donor' node, to find all unique paths to every other node in the topology.
+4.  **Path and Topology Analysis:** A DFS algorithm systematically finds all unique paths from the 'donor' to every other node. The final `Topo` object encapsulates this complete view of the network's structure and potential routes.
 
-5.  **Additional Setup:**
-    *   Conflict nodes are identified based on shared parents or children.
-    *   The initial graph matrix is updated to replace `1`s with actual node names for easier inspection.
+5.  **Rigorous Testing:** A suite of unit tests using `pytest` validates the correctness of core algorithms—including node generation, link creation, data rate calculations, and pathfinding—to ensure reliability and maintainability.
 
-6.  **Modularity:** The codebase is structured into:
-    *   `model/`: Contains core classes like `Node`, `Link`, and `Topo`.
-    *   `utils/`: Helper functions for common tasks (error handling, math, graph operations).
-    *   `config/`: Manages physical layer parameters and default formulas.
+## Key Challenges Addressed
 
-7.  **Testing (`tests\`)** 
-    *   Use pytest to set up all function tests to ensure they work correctly and have no issues.
+*   **Bridging Abstraction and Reality:** The core challenge was translating a high-level, abstract grid into a detailed, physics-aware network model. Topogen solves this by systematically building `Node` and `Link` objects with calculated, real-world attributes.
+*   **Flexible and Realistic Link Modeling:** Instead of using fixed link capacities, I designed a system that calculates data rates based on physical distance and a configurable channel model, making simulations more realistic.
+*   **Designing for Extensibility:** The package was architected to be highly customizable. By externalizing physical layer parameters to a YAML file and allowing for custom data rate functions, users can easily adapt Topogen to their specific research needs.
 
-**Key Challenges Addressed:**
+## Impact & Results
 
-*   **Abstract to Concrete Mapping:** Translating the simple grid input into a rich set of interconnected objects with meaningful attributes.
-*   **Realistic Link Characterization:** Implementing a data rate model that considers physical distance and configurable channel parameters, rather than assuming fixed capacities.
-*   **Connectivity Logic:** Ensuring nodes connect based on proximity rules while respecting the desired `tree_type` (DAG/TREE).
-*   **Flexibility and Extensibility:** Designing the system to allow users to inject custom data rate formulas and easily modify channel parameters via `channel_config.yaml`.
-*   **Package Usability:** Structuring the project with `setuptools` for straightforward installation and integration into other Python projects.
-
-## Impact & Results (Generalized)
-
-Topogen provides significant value by:
-
-*   **Automating Tedious Setup:** Drastically reduces the manual effort required to define and configure network topologies for simulations or analytical studies.
-*   **Enabling Rapid Prototyping:** Allows users to quickly generate and iterate on different network structures and parameter settings.
-*   **Facilitating Reproducible Research:** By codifying the topology generation process, it ensures that network setups can be consistently reproduced.
-*   **Providing a Foundation for Advanced Analysis:** The generated `Topo` object, with its detailed node, link, and path information, serves as a robust input for various network analysis tools or custom simulation scripts.
-*   **Improving Understanding of Network Dynamics:** By allowing easy manipulation of parameters like node density, connectivity range, and physical channel properties, users can better explore their impact on network behavior.
+*   **Dramatically Reduces Setup Time:** Automates the laborious process of defining network topologies, allowing researchers to focus on analysis rather than manual configuration.
+*   **Accelerates Research and Prototyping:** Enables users to quickly generate, test, and iterate on various network structures and physical parameters.
+*   **Ensures Reproducibility:** By codifying the topology generation process, Topogen ensures that network experiments are consistent and reproducible, a cornerstone of credible research.
+*   **Provides a Foundation for Advanced Analysis:** The detailed `Topo` object serves as a robust input for custom simulation scripts or network analysis tools.
 
 ## What I Learned
 
-Developing Topogen has been a valuable learning experience, reinforcing and expanding my skills in several areas:
-
-*   **Object-Oriented Design:** Deepened understanding of how to model complex systems (like a network) using classes and objects, managing their relationships and behaviors.
-*   **Algorithm Implementation:** Gained practical experience in implementing graph traversal algorithms (DFS for pathfinding) and custom logic for node and link creation.
-*   **Python Package Development:** Mastered the use of `setuptools` for creating installable Python packages, including managing dependencies and entry points (though not explicitly shown, it's a standard part of `setup.py`).
-*   **Configuration Management:** Learned the importance of separating configuration (like channel parameters) from code for flexibility and ease of modification, utilizing YAML for this purpose.
-*   **API Design:** Considered how users would interact with the `generate_topology_from_graph` function and the resulting `Topo` object, aiming for an intuitive and useful interface.
-*   **Modular Programming:** Practiced breaking down a complex problem into smaller, manageable modules (`model`, `utils`, `config`) for better organization and maintainability.
-*   **Mathematical Modeling in Code:** Translating physical concepts like the Shannon Capacity formula and distance calculations into functional Python code.
-*   **The Importance of Testing:** (Even if not explicitly detailed here) The presence of a `tests` directory underscores the iterative process of writing code and verifying its correctness.
+*   **Applied Object-Oriented Design:** Gained deep experience modeling a complex system (a network) with classes and objects, effectively managing their relationships and behaviors.
+*   **Python Package Development Lifecycle:** Mastered the full lifecycle of Python package development, from structuring the project with `setuptools` to writing effective tests with `pytest` and managing configurations with `PyYAML`.
+*   **Algorithm Implementation:** Implemented and adapted classic graph traversal algorithms (DFS) for a specific, practical application in network pathfinding.
+*   **Designing an Intuitive API:** Focused on creating a clean and usable interface for the package, allowing users to generate complex topologies with a single function call.
