@@ -3,7 +3,7 @@ locale                   : "en-US"
 title                    : "Koh Jin Hong, Lucas - Engineering Portfolio"
 title_separator          : "-"
 name                     : "Koh Jin Hong, Lucas"
-description              : "Highly motivated Electronic Engineering Master's candidate (expected Aug 2025) with a robust foundation in networking (TCP/IP, 5G, IAB) and programming (Python, C++). Demonstrates practical experience in automating firmware testing, developing backend systems, and researching distributed link scheduling. Eager to apply expertise in system development, integration, and innovative technologies." # From Resume Summary
+description              : "Highly motivated Electronic Engineering Master's with a robust foundation in networking (TCP/IP, 5G, IAB) and programming (Python, C++). Demonstrates practical experience in automating firmware testing, developing backend systems, and researching distributed link scheduling. Eager to apply expertise in system development, integration, and innovative technologies." # From Resume Summary
 url                      : "https://lucasjinhong.github.io"
 baseurl                  : ""
 repository               : "lucasjinhong/lucasjinhong.github.io" # Assumes your repo name
@@ -18,7 +18,7 @@ timezone                 : # e.g., Asia/Taipei (Optional)
 author:
   name                   : "Koh Jin Hong, Lucas"
   avatar                 : "/assets/images/profile_picture.png" # MAKE SURE YOU HAVE THIS IMAGE
-  bio                    : "Master of Science Candidate, Electronic Engineering. Passionate about networking, firmware, and backend solutions." # Shorter bio for sidebar
+  bio                    : "Master of Science, Electronic Engineering. Passionate about networking, firmware, and backend solutions." # Shorter bio for sidebar
   location               : "Johor, Malaysia" # Current location for studies
   # email defined below to avoid duplication if theme displays it from here
   links:

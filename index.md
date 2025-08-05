@@ -7,7 +7,7 @@ entries_layout: grid
 
 <div style="text-align: center; margin-bottom: 2em;">
   <h1>KOH JIN HONG, LUCAS</h1>
-  <p class="lead" style="font-size: 1.2em; color: #555;">Master of Science Candidate, Electronic Engineering</p>
+  <p class="lead" style="font-size: 1.2em; color: #555;">Master of Science, Electronic Engineering</p>
   <p class="lead" style="font-size: 1.1em; color: #666;">Cloud Infrastructure (GCP, AWS) | DevOps | Network Engineering</p>
   <p style="margin-top: 1em;">
     <a href="{{ "/assets/Resume_Lucas.pdf" | relative_url }}" class="btn btn--success btn--large" target="_blank" download>Download Resume (PDF)</a>
@@ -16,7 +16,7 @@ entries_layout: grid
 
 ## Summary
 {% capture resume_summary %}
-Proactive M.S. in Electronic Engineering candidate specializing in network engineering and automation. Proven expertise in building and managing scalable infrastructure using GCP, Kubernetes, Terraform, and Docker. Experienced in configuring FortiGate firewalls, automating CI/CD pipelines, and troubleshooting complex network issues. Eager to apply skills in cloud infrastructure and network automation to a challenging DevOps or Network Engineering role.
+Proactive M.S. in Electronic Engineering specializing in network engineering and automation. Proven expertise in building and managing scalable infrastructure using GCP, Kubernetes, Terraform, and Docker. Experienced in configuring FortiGate firewalls, automating CI/CD pipelines, and troubleshooting complex network issues. Eager to apply skills in cloud infrastructure and network automation to a challenging DevOps or Network Engineering role.
 {% endcapture %}
 {{ resume_summary | markdownify }}
 
@@ -25,7 +25,7 @@ Proactive M.S. in Electronic Engineering candidate specializing in network engin
 ## Education
 
 ### Master of Science, Electronic Engineering
-*Sep 2023 - Expected Aug 2025*
+*Sep 2023 - Jul 2025*
 **National Taipei University of Technology**
 *   **Network Infrastructure & Security:** Gained hands-on experience by configuring and deploying FortiGate security tunnels and firewalls for Taiwan Space Agency projects. Resolved critical network connectivity issues (IP conflicts, configuration errors) at the university's networking centre to ensure operational uptime.
 *   **Graduate Research (5G/IAB Networks):** Researched and authored a graduate paper on Distributed Link Scheduling for IAB Networks, investigating Layer 2 5G architecture and developing an optimized packet forwarding algorithm.
@@ -59,7 +59,7 @@ Proactive M.S. in Electronic Engineering candidate specializing in network engin
 ## Skills
 *   **Cloud & Containerization:** GCP, AWS, Kubernetes (GKE), Docker, Terraform
 *   **Automation & CI/CD:** Python, Bash, Ansible, Jenkins, GitHub Actions, CI/CD Design
-*   **Networking & Security:** TCP/IP, FortiGate (Firewalls, Tunnels), Network Troubleshooting, 5G/IAB Architecture, CCNA (In Progress)
+*   **Networking & Security:** TCP/IP, FortiGate (Firewalls, Tunnels), Network Troubleshooting, 5G/IAB Architecture
 *   **Backend & Development:** Node.js, JavaScript, C/C++, MongoDB, RESTful APIs
 *   **Tools & Platforms:** Git, Linux, Jira
 *   **Languages:** Chinese (Fluent), English (TOEIC: 825)
